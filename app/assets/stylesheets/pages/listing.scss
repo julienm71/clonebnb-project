@@ -1,3 +1,7 @@
+.container {
+  width: 975px;
+}
+
 .map-layout {
   display: flex;
   align-items: stretch;
@@ -17,7 +21,7 @@
 }
 
 #map {
-  width: 400px;
+  width: 600px;
   height: 100vh;
   position: sticky !important;
   top: 0;
