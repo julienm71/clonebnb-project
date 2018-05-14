@@ -6,23 +6,103 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Cleaning database...'
-Place.destroy_all
+require 'faker'
 
-puts 'Creating restaurants...'
-places_attributes = [
-  {
-    name:         'Dishoom',
-    address:      '7 Boundary St, London E2 7JE',
-    description:  'Buzzy destination for Indian street food in Bombay-style vintage decor.',
-    stars:        5
-  },
-  {
-    name:         'Pizza East',
-    address:      '56A Shoreditch High St, London E1 6PQ',
-    description:  'Pizzeria with industrial looks, serving rustic pizza and antipasti.',
-    stars:        4
-  }
-]
-Place.create!(restaurants_attributes)
+puts 'Creating 10 fake users...'
+10.times do
+  user = User.new(
+    email:     Faker::Internet.email,
+    password: 'djifdjnfjdf'
+
+  )
+  user.save!
+end
+
+puts 'Creating 10 fake places...'
+10.times do
+  place = Place.new(
+    user_id: 1,
+    address:     Faker::Address.street_address,
+    photo:      'https://source.unsplash.com/random',
+    name:       Faker::Address.city,
+    description:Faker::Lorem.paragraph
+  )
+  place.save!
+end
+
 puts 'Finished!'
+# puts 'Cleaning database...'
+# Place.destroy_all
+
+# puts 'Creating restaurants...'
+# places_attributes = [
+#   {
+#     adress:     Faker::Address.street_address,
+#     photo:      'https://source.unsplash.com/random',
+#     name:       Faker::Address.city,
+#     description:Faker::Lorem.paragraph
+#   },
+#   {
+#     adress:     Faker::Address.street_address,
+#     photo:      'https://source.unsplash.com/random',
+#     name:       Faker::Address.city,
+#     description:Faker::Lorem.paragraph
+#   },
+#   {
+#     adress:     Faker::Address.street_address,
+#     photo:      'https://source.unsplash.com/random',
+#     name:       Faker::Address.city,
+#     description:Faker::Lorem.paragraph
+#   },
+#   {
+#     adress:     Faker::Address.street_address,
+#     photo:      'https://source.unsplash.com/random',
+#     name:       Faker::Address.city,
+#     description:Faker::Lorem.paragraph
+#   },
+#   {
+#     adress:     Faker::Address.street_address,
+#     photo:      'https://source.unsplash.com/random',
+#     name:       Faker::Address.city,
+#     description:Faker::Lorem.paragraph
+#   },
+#   {
+#     adress:      Faker::Address.street_address,
+#     photo:       'https://source.unsplash.com/random',
+#     name:        Faker::Address.city,
+#     description: Faker::Lorem.paragraph
+#   }
+# ]
+
+# users_attributes = [
+#   {
+#     email:     Faker::Internet.email,
+#     password: 'djifdjnfjdf'
+
+#   },
+#   {
+#     email:     Faker::Internet.email,
+#     password:  'sdkfdjifdjnfjdf'
+#   },
+
+#     email:     Faker::Internet.email,
+#     password:  'sdkfddjifdddjnfjdf'
+#   },
+#   {
+#     email:     Faker::Internet.email,
+#     password:  'sdkfddjifdddjnfjdfs'
+#   },
+#   {
+#    email:     Faker::Internet.email,
+#    password:  'sdkfddjifdddjnfdjdf'
+#   },
+#   {
+#     email:     Faker::Internet.email,
+#     password:  'sdkfddjifddddffjdf'
+#   }
+# ]
+
+# User.create!(users_attributes)
+
+# Place.create!(places_attributes)
+# puts 'Finished!'
