@@ -1,0 +1,8 @@
+<%= simple_form_for (@place) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :user_id, input_html: { value: current_user.id, class: "hidden" }, label: false %>
+  <%= f.submit "add a place", class: "btn btn-success" %>
+<% end %>
+
