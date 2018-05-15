@@ -12,6 +12,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    authorize @place
   end
 
   def new
