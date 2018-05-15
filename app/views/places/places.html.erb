@@ -1,0 +1,6 @@
+<h1>My list of places</h1>
+<% @places.each do |place| %>
+  <h2><%= place.photo %></h2>
+  <p><%= place.name %></p>
+  <p><%= place.address %></p>
+<% end %>
