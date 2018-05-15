@@ -3,6 +3,10 @@ class PlacePolicy < ApplicationPolicy
     return true
   end
 
+  def show
+    true
+  end
+
   def index?
     true
   end
