@@ -13,16 +13,26 @@ puts 'Creating 30 fake users...'
   user = User.new(
     email:     Faker::Internet.email,
     password: 'djifdjnfjdf'
-
   )
   user.save!
 end
 
 puts 'Creating 30 fake places...'
-30.times do
+10.times do
   place = Place.new(
     user_id: 1,
     address:     Faker::Address.street_address,
+    photo:      'https://source.unsplash.com/random',
+    name:       Faker::Address.city,
+    description:Faker::Lorem.paragraph
+  )
+  place.save!
+end
+
+5.times do
+  place = Place.new(
+    user_id: 1,
+    address:     'bordeaux',
     photo:      'https://source.unsplash.com/random',
     name:       Faker::Address.city,
     description:Faker::Lorem.paragraph
