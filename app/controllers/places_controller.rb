@@ -20,8 +20,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    authorize @place
     @place = Place.new(place_params)
+    authorize @place
     if @place.save
       redirect_to places_path
     else
