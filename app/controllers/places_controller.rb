@@ -2,10 +2,11 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_place_instance, only: [:show, :edit, :update, :destroy]
   def index
+    # raise
     @places = policy_scope(Place).order(created_at: :desc)
-    if params[:city]
-      search = params[:city]
-      @places = Place.where(city: search)
+    if params["/places"]["city"]
+      search = params["/places"]["city"]
+      @places = Place.where(address: search)
     else
       @places = Place.all
     end
@@ -55,6 +56,6 @@ private
   end
 
   def place_params
-    params.require(:place).permit(:description, :name, :photo, :address, :user_id)
+    params.require(:place).permit(:description, :name, :photo, :address, :user_id, :city)
   end
 end
