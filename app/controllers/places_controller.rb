@@ -2,6 +2,7 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_place_instance, only: [:show, :edit, :update, :destroy]
   def index
+    @places = policy_scope(Place).order(created_at: :desc)
     if params[:city]
       search = params[:city]
       @places = Place.where(city: search)
