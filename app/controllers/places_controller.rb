@@ -2,7 +2,12 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_place_instance, only: [:show, :edit, :update, :destroy]
   def index
-    @places = Place.all
+    if params[:city]
+      search = params[:city]
+      @places = Place.where(city: search)
+    else
+      @places = Place.all
+    end
   end
 
   def show
