@@ -8,8 +8,8 @@
 
 require 'faker'
 
-puts 'Creating 10 fake users...'
-10.times do
+puts 'Creating 30 fake users...'
+30.times do
   user = User.new(
     email:     Faker::Internet.email,
     password: 'djifdjnfjdf'
@@ -18,8 +18,8 @@ puts 'Creating 10 fake users...'
   user.save!
 end
 
-puts 'Creating 10 fake places...'
-10.times do
+puts 'Creating 30 fake places...'
+30.times do
   place = Place.new(
     user_id: 1,
     address:     Faker::Address.street_address,
