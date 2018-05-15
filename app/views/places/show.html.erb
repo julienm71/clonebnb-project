@@ -9,11 +9,7 @@
 <%= @place.description %>
 <%= @place.address %>
 
-<div class="container">
-  <% simple_form_for(places_path) do |f| %>
-    <%= f.input :date, id: "myID" %>
-    <%= f.submit  %>
-  <% end %>
 
+<div class="flatpickr-calendar">
+  <input type="date", id="myID">
 </div>
-
