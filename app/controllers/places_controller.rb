@@ -2,7 +2,13 @@ class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_place_instance, only: [:show, :edit, :update, :destroy]
   def index
-    @places = Place.all
+    @places = policy_scope(Place).order(created_at: :desc)
+    if params[:city]
+      search = params[:city]
+      @places = Place.where(city: search)
+    else
+      @places = Place.all
+    end
   end
 
   def show
@@ -10,9 +16,11 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    authorize @place
   end
 
   def create
+    authorize @place
     @place = Place.new(place_params)
     if @place.save
       redirect_to places_path
@@ -22,9 +30,11 @@ class PlacesController < ApplicationController
   end
 
   def edit
+    authorize @place
   end
 
   def update
+    authorize @place
     if @place.update(place_params)
       redirect_to place_path(@place)
     else
@@ -33,6 +43,7 @@ class PlacesController < ApplicationController
   end
 
   def destroy
+    authorize @place
     @place.destroy
     redirect_to places_path
   end
@@ -43,6 +54,6 @@ private
   end
 
   def place_params
-    params.require(:place).permit(:description, :name, :photo, :address)
+    params.require(:place).permit(:description, :name, :photo, :address, :user_id)
   end
 end
