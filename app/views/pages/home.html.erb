@@ -3,9 +3,8 @@
     <h1><span id="banner-typed-text"></span></h1>
     <hr style="width:40%;">
     <div class="container">
-    <%= simple_form_for places_path,:url => "places", :method => :get, html: { class: 'form-inline' },
+    <%= simple_form_for :search, :url => places_path, method: :get, html: { class: 'form-inline' },
       wrapper: :horizontal_form do |f| %>
-
       <div class="form-inputs">
         <%= f.input :city, required: true, autofocus: true, label: false, placeholder: 'City name..', id: 'submit-search-value' %>
         <%= f.button :submit, "Search!", class: 'btn btn-primary' %>
