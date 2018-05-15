@@ -1,9 +1,13 @@
-<div class="container">
-  <h2> <%= @place.name %> </h2>
-  <%= @place.photo %>
-  <%= @place.description %>
-  <%= @place.address %>
+
+<div class="bannershow" style="background-image: url(<%= @place.photo %>);">
+
 </div>
+
+
+
+<h2> <%= @place.name %> </h2>
+<%= @place.description %>
+<%= @place.address %>
 
 <div class="container">
   <% simple_form_for(places_path) do |f| %>
@@ -12,3 +16,4 @@
   <% end %>
 
 </div>
+
