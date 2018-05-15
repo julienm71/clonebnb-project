@@ -1,0 +1,14 @@
+<div class="container">
+  <h2> <%= @place.name %> </h2>
+  <%= @place.photo %>
+  <%= @place.description %>
+  <%= @place.address %>
+</div>
+
+<div class="container">
+  <% simple_form_for(places_path) do |f| %>
+    <%= f.input :date, id: "myID" %>
+    <%= f.submit  %>
+  <% end %>
+
+</div>

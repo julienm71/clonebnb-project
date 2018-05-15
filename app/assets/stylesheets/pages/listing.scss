@@ -1,0 +1,28 @@
+.container {
+  width: 975px;
+}
+
+.map-layout {
+  display: flex;
+  align-items: stretch;
+}
+
+.map-container {
+  background-color: #EE5F5B;
+  .pending-map {
+    border-radius: 1px;
+    padding-top: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    position: static;
+    vertical-align: middle;
+    display: table-cell;
+  }
+}
+
+#map {
+  width: 600px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0;
+}
