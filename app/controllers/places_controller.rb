@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   def index
     # raise
     @places = policy_scope(Place).order(created_at: :desc)
-    if params["/places"]["city"] && Place.where(address: search)
+    if params["/places"]["city"]
       search = params["/places"]["city"]
       @places = Place.where(address: search)
     else
