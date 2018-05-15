@@ -1,5 +1,5 @@
-<form>
-  <input type="email">
-  <input type="password">
-  <input type="submit" value="Log in">
-</form>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
