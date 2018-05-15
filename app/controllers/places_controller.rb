@@ -13,6 +13,7 @@ class PlacesController < ApplicationController
   end
 
   def create
+    authorize @place
     @place = Place.new(place_params)
     if @place.save
       redirect_to places_path
@@ -22,9 +23,11 @@ class PlacesController < ApplicationController
   end
 
   def edit
+    authorize @place
   end
 
   def update
+    authorize @place
     if @place.update(place_params)
       redirect_to place_path(@place)
     else
@@ -33,6 +36,7 @@ class PlacesController < ApplicationController
   end
 
   def destroy
+    authorize @place
     @place.destroy
     redirect_to places_path
   end
