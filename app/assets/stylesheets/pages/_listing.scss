@@ -4,6 +4,7 @@
 .map-layout {
   display: flex;
   align-items: stretch;
+  justify-content:space-between;
 }
 
 .map-container {
@@ -20,7 +21,7 @@
 }
 
 #map {
-  width: 600px;
+  width: 700px;
   height: 100vh;
   position: sticky !important;
   top: 0;
