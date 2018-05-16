@@ -5,10 +5,19 @@ class PlacesController < ApplicationController
   def index
     @places = policy_scope(Place).order(created_at: :desc)
 
+    @places = Place.where.not(latitude: nil, longitude: nil)
+
     if params.dig("search", "city").present?
       search = params["search"]["city"]
-      @places = @places.where(address: search)
+      @places = @places.near(search, 10)
     end
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude
+      }
+    end
+
   end
 
   def show
@@ -51,7 +60,7 @@ class PlacesController < ApplicationController
   end
 
 private
-    def set_place_instance
+  def set_place_instance
     @place = Place.find(params[:id])
   end
 
