@@ -2,13 +2,14 @@
 <div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
 
+<div class="container">
+  <h2> <%= @place.name %> </h2>
+  <%= @place.description %>
+  <%= @place.address %>
 
-<h2> <%= @place.name %> </h2>
-<%= @place.description %>
-<%= @place.address %>
 
-
-<%= simple_form_for @reservation, method: :post  do |f| %>
-  <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
-  <%= f.button :submit, "Book this place", class: "btn btn-success" %>
-<% end %>
+  <%= simple_form_for [@reservation], method: :post  do |f| %>
+    <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
+    <%= f.button :submit, "Book this place", class: "btn btn-success" %>
+  <% end %>
+</div>
