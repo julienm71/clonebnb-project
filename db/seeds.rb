@@ -17,26 +17,32 @@ puts 'Creating 30 fake users...'
   user.save!
 end
 
-puts 'Creating 30 fake places...'
+  user = User.new(
+    email:     "test@test.com",
+    password: 'test123'
+  )
+  user.save!
+
+puts 'Creating 20 fake places...'
 10.times do
   place = Place.new(
-    user_id: 1,
-    address:     Faker::Address.street_address,
-    photo:      'https://source.unsplash.com/random',
+    user: User.first,
+    address:     'paris',
     name:       Faker::Address.city,
     description: Faker::Lorem.paragraph
   )
+  place.remote_photo_url = "https://res.cloudinary.com/dbhchqzna/image/upload/v1526026709/sample.jpg"
   place.save!
 end
 
-5.times do
+10.times do
   place = Place.new(
-    user_id: 1,
+    user: User.first,
     address:     'bordeaux',
-    photo:      'https://source.unsplash.com/random',
     name:       Faker::Address.city,
     description:Faker::Lorem.paragraph
   )
+  place.remote_photo_url = "https://res.cloudinary.com/dbhchqzna/image/upload/v1526026709/sample.jpg"
   place.save!
 end
 
