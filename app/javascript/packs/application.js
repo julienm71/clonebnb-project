@@ -4,7 +4,8 @@ import "bootstrap";
 
 loadDynamicBannerText();
 
-flatpickr("#myID", {
+flatpickr(".datepicker", {
     altInput: true,
     dateFormat: "d-m-Y H:i"
 });
+

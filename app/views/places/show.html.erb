@@ -8,7 +8,7 @@
 <%= @place.address %>
 
 
-<div class="flatpickr-calendar">
-  <input type="date", id="myID">
-</div>
-
+<%= simple_form_for @reservation, method: :post  do |f| %>
+  <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
+  <%= f.button :submit, "Book this place", class: "btn btn-success" %>
+<% end %>
