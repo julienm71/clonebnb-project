@@ -1,7 +1,5 @@
 
-<div class="bannershow" style="background-image: url(<%= @place.photo %>);">
-
-</div>
+<div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
 
 
@@ -13,3 +11,4 @@
 <div class="flatpickr-calendar">
   <input type="date", id="myID">
 </div>
+
