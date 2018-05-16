@@ -12,11 +12,12 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 70px !important;
+  width:70px !important;
 }
 
 /* User Avatar */
-.navbar-wagon img {
+.navbar-wagon .avatar img {
   height: 35px;
   width: 35px;
   border-radius: 50%;

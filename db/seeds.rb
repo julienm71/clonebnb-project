@@ -11,6 +11,9 @@ require 'faker'
 puts 'Creating 30 fake users...'
 30.times do
   user = User.new(
+    firstname: Faker::Name,
+    lastname: Faker::Name,
+    phone_number: Faker::PhoneNumber,
     email:     Faker::Internet.email,
     password: 'djifdjnfjdf'
   )
@@ -19,6 +22,9 @@ puts 'Creating 30 fake users...'
 end
 
   user = User.new(
+    firstname: "TestFirst",
+    lastname: "TestLast",
+    phone_number: Faker::PhoneNumber,
     email:     "test@test.com",
     password: 'test123'
   )
@@ -30,6 +36,7 @@ puts 'Creating 20 fake places...'
   place = Place.new(
     user: User.first,
     address:     'paris',
+    price: 500,
     name:       Faker::Address.city,
     description: Faker::Lorem.paragraph
   )
@@ -41,6 +48,7 @@ end
   place = Place.new(
     user: User.first,
     address:     'bordeaux',
+    price: 500,
     name:       Faker::Address.city,
     description:Faker::Lorem.paragraph
   )
