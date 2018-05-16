@@ -1,12 +1,18 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_place_instance, only: [:show, :edit, :update, :destroy]
+
   def index
     @places = policy_scope(Place).order(created_at: :desc)
 
-    if params.dig("search", "city").present?
-      search = params["search"]["city"]
-      @places = @places.where(address: search)
+    @places = Place.where.not(latitude: nil, longitude: nil)
+
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
     end
   end
 
@@ -49,7 +55,7 @@ class PlacesController < ApplicationController
   end
 
 private
-    def set_place_instance
+  def set_place_instance
     @place = Place.find(params[:id])
   end
 

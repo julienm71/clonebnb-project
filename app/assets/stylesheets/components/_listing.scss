@@ -4,20 +4,19 @@
 .map-layout {
   display: flex;
   align-items: stretch;
-  justify-content:space-between;
 }
 
 .map-container {
   background-color: #EE5F5B;
-  .pending-map {
-    border-radius: 1px;
-    padding-top: 0;
-    padding-left: 10%;
-    padding-right: 10%;
-    position: static;
-    vertical-align: middle;
-    display: table-cell;
-  }
+  // .pending-map {
+  //   border-radius: 1px;
+  //   padding-top: 0;
+  //   padding-left: 10%;
+  //   padding-right: 10%;
+  //   position: static;
+  //   vertical-align: middle;
+  //   display: table-cell;
+  // }
 }
 
 #map {

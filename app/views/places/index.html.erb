@@ -1,15 +1,12 @@
 
 <div class="map-layout">
-  <!-- <h1>My list of places</h1> -->
   <div class="cards-container">
     <div class="container-fluid">
       <div class="row">
         <% @places.each do |place| %>
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class="card" style="background-image: url('<%= cl_image_path place.photo, height: 300, width: 400, crop: :fill %>')">
-              <!-- <img src="<%= place.photo %>" style="width:50px; height:50px;"> -->
               <p><%= link_to place.name, place_path(place.id) %></p>
-              <!-- <p><%= place.address %></p> -->
             </div>
           </div>
         <% end %>
@@ -17,23 +14,7 @@
     </div>
   </div>
   <div class="map-container hidden-xs">
-    <div id="map" class="pending-map"></div>
+    <div id="map" style="width: 1000px; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script src="build/application.js"></script>
 
-    <!-- Gmaps js: building the map -->
-<script>
-  function initMap() {
-        // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 52.5206, lng: 13.4098},
-      scrollwheel: false,
-      zoom: 8
-    });
-    }
-</script>
-    // <!-- Gmaps JavaScript -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap" >
-</script>
