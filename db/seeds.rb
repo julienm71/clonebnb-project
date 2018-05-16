@@ -14,6 +14,7 @@ puts 'Creating 30 fake users...'
     email:     Faker::Internet.email,
     password: 'djifdjnfjdf'
   )
+  user.remote_photo_url = "https://res.cloudinary.com/dbhchqzna/image/upload/v1526026709/sample.jpg"
   user.save!
 end
 
@@ -21,6 +22,7 @@ end
     email:     "test@test.com",
     password: 'test123'
   )
+  user.remote_photo_url = "https://res.cloudinary.com/dbhchqzna/image/upload/v1526026709/sample.jpg"
   user.save!
 
 puts 'Creating 20 fake places...'
