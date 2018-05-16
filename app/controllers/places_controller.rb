@@ -22,6 +22,7 @@ class PlacesController < ApplicationController
 
   def show
     authorize @place
+    @reservation = Reservation.new
   end
 
   def new
