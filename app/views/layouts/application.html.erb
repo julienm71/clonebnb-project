@@ -14,9 +14,11 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
 
-     <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_SERVER_KEY'] %>&libraries=places&sensor=false"></script>
