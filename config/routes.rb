@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   resources :places
   resources :reservations, only: [:create, :new, :destroy]
   devise_for :users
-
 end
