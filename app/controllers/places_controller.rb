@@ -7,13 +7,17 @@ class PlacesController < ApplicationController
 
     @places = Place.where.not(latitude: nil, longitude: nil)
 
+    if params.dig("search", "city").present?
+      search = params["search"]["city"]
+      @places = @places.near(search, 10)
+    end
     @markers = @places.map do |place|
       {
         lat: place.latitude,
-        lng: place.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: place.longitude
       }
     end
+
   end
 
   def show
