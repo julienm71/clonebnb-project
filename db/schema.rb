@@ -30,15 +30,19 @@ ActiveRecord::Schema.define(version: 20180516144116) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.integer "price"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_places_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.date "reserved_at"
-    t.bigint "cateogry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cateogry_id"], name: "index_reservations_on_cateogry_id"
+    t.bigint "place_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_reservations_on_category_id"
+    t.index ["place_id"], name: "index_reservations_on_place_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +67,6 @@ ActiveRecord::Schema.define(version: 20180516144116) do
   end
 
   add_foreign_key "places", "users"
+  add_foreign_key "reservations", "categories"
+  add_foreign_key "reservations", "places"
 end
