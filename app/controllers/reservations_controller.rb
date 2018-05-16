@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_place_instance
+  before_action :set_place_instance, only: [:index, :new]
 
   def index
     @reservation = policy_scope(Reservation).order(created_at: :desc)
@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservations_path
     else
-      render :new
+      redirect_to place_path(@place)
     end
   end
 
@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
   private
 
   def set_place_instance
-    @place = Place.find(params[:id])
+    @place = Place.find(params[:place_id])
   end
 
   def reservation_params
