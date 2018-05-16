@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <% @reservations.each do |reservation| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-reservations">
+        <%= reservation.reserved_at %>
+      </div>
+    </div>
+  <% end %>
+</div>
