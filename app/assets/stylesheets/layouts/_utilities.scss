@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 .content {
   min-height: calc(100vh - 170px);
 }
 
 .container {
   margin-bottom: 20px;
+}
+
+.flex {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif !important;
 }
