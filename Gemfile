@@ -14,6 +14,7 @@ gem "geocoder"
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 4.7'
+gem 'rails-assets-font-awesome-animation', source: 'https://rails-assets.org'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
