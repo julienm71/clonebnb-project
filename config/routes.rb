@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   root to: 'pages#home'
-  resources :places
-  resources :reservations, only: [:index, :create, :new, :destroy]
+  resources :places do
+    resources :reservations, only: [:create, :destroy]
+  end
   devise_for :users
-
+  resources :reservations, only: [:index]
 end
