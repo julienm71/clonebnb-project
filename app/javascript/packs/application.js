@@ -1,5 +1,5 @@
 import { loadDynamicBannerText } from '../components/typed';
-import { autocomplete } from './map';
+import { autocomplete } from '../components/autocomplete';
 import flatpickr from "flatpickr";
 import "bootstrap";
 
