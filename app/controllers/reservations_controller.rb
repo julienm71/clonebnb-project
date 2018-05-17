@@ -1,18 +1,19 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_place_instance, only: [:index, :create]
+  before_action :set_place_instance, only: [:create]
 
   def index
-    @reservation = policy_scope(Reservation).order(created_at: :desc)
+    @reservations = policy_scope(current_user.reservations).order(created_at: :desc)
   end
 
   def create
     @reservation = @place.reservations.new(reservation_params)
+    @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      redirect_to reservations_path(@reservation)
+      redirect_to reservations_path
     else
-      redirect_to place_path(@place)
+      render "places/show"
     end
   end
 
