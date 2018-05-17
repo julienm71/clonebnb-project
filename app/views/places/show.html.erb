@@ -1,4 +1,3 @@
-
 <div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
 
@@ -9,6 +8,7 @@
 
   <%= simple_form_for [@place, @reservation] do |f| %>
     <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
+    <%= f.association :category %>
     <%= f.button :submit, "Book this place", class: "btn btn-success" %>
   <% end %>
 </div>

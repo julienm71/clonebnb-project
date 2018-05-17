@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create, :destroy]
   end
   devise_for :users
-  resources :reservations, only: [:index]
+  resources :reservations, only: :index
 end
