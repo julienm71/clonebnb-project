@@ -4,9 +4,11 @@
   <%= f.input :name, required: true, autofocus: true %>
   <%= f.input :description, required: true, autofocus: true %>
   <%= f.input :address, required: true, autofocus: true %>
-  <%= f.input :price, required: true, autofocus: true %>
+  <%= f.input :price, required: true, autofocus: true, label: "Price (per night)" %>
+  <hr>
   <%= f.input :photo, required: true, autofocus: true %>
   <%= f.input :photo_cache, as: :hidden %>
+  <hr>
   <%= f.input :user_id, input_html: { value: current_user.id, class: "hidden" }, label: false %>
   <%= f.submit "Add a place", class: "btn btn-success" %>
   <% end %>
