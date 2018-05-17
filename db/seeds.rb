@@ -8,13 +8,14 @@
 
 require 'faker'
 
+
 puts 'Creating 30 fake users...'
-30.times do
+30.times do |n|
   user = User.new(
     firstname: Faker::Name,
     lastname: Faker::Name,
     phone_number: Faker::PhoneNumber,
-    email:     Faker::Internet.email,
+    email:     "#{n}#{Faker::Internet.email}",
     password: 'djifdjnfjdf'
   )
   user.remote_photo_url = "https://res.cloudinary.com/dbhchqzna/image/upload/v1526026709/sample.jpg"
@@ -35,7 +36,7 @@ puts 'Creating 20 fake places...'
 10.times do
   place = Place.new(
     user: User.first,
-    address:     'paris',
+    address:     '16 rue esprit des lois, bordeaux',
     price: 500,
     name:       Faker::Address.city,
     description: Faker::Lorem.paragraph
@@ -47,7 +48,7 @@ end
 10.times do
   place = Place.new(
     user: User.first,
-    address:     'bordeaux',
+    address:     '107 cours balguerie stuttenberg, bordeaux',
     price: 500,
     name:       Faker::Address.city,
     description:Faker::Lorem.paragraph
