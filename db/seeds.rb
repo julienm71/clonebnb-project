@@ -245,4 +245,19 @@ end
   place.save!
 end
 
+
+puts "Generating categories"
+category = Category.new(name: "Birthday")
+category.save!
+category1 = Category.new(name: "Corporate")
+category1.save!
+category2 = Category.new(name: "Funeral")
+category2.save!
+category3 = Category.new(name: "Wedding")
+category3.save!
+category4 = Category.new(name: "Seminary")
+category4.save!
+category5 = Category.new(name: "Other")
+category5.save!
+
 puts 'Finished!'
