@@ -2,17 +2,19 @@
 
 
 <div class="container">
-  <div class="flex-item">
-    <h2> <%= @place.name %> </h2>
-    <%= @place.description %>
-    <%= @place.address %>
-  </div>
+  <div class="flex">
+    <div class="flex-item">
+      <h2> <%= @place.name %> </h2>
+      <%= @place.description %>
+      <%= @place.address %>
+    </div>
 
-  <div class="flex-item">
-    <%= simple_form_for [@place, @reservation] do |f| %>
-      <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
-      <%= f.association :category %>
-      <%= f.button :submit, "Book this place", class: "btn btn-success" %>
-    <% end %>
+    <div class="flex-item">
+      <%= simple_form_for [@place, @reservation] do |f| %>
+        <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
+        <%= f.association :category %>
+        <%= f.button :submit, "Book this place", class: "btn btn-success" %>
+      <% end %>
+    </div>
   </div>
 </div>
