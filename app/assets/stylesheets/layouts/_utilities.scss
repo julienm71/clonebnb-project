@@ -8,11 +8,30 @@
   margin-bottom: 20px;
 }
 
-.flex {
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.containershow {
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-itemshow {
+  margin-top: 43px;
+  margin-right: 100px;
+}
+
+.flex-item2 {
+  margin-left: 50px;
+}
+
+  #reviews {
+    margin-left: 50px;
+  }
 
 html {
     scroll-behavior: smooth;
