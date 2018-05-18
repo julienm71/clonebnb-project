@@ -1,31 +1,35 @@
 <div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
+<div class="row">
+  <div class="containershow">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="flex-item2">
+        <h2> <%= @place.name %> </h2>
+        <%= @place.description %>
+        <br>
+        <br>
+        <strong> <%= @place.address %> </strong>
+      </div>
+    </div>
 
-<div class="containershow">
-  <div class="flex-item2">
-    <h2> <%= @place.name %> </h2>
-    <%= @place.description %>
-    <br>
-    <br>
-    <strong> <%= @place.address %> </strong>
-  </div>
-
-  <div class="flex-itemshow">
-    <%= simple_form_for [@place, Reservation.new] do |f| %>
-      <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
-      <%= f.association :category, required: true, autofocus: true %>
-      <%= f.button :submit, "Book this place", class: "btn btn-success" %>
-    <% end %>
-    <br>
-    <p>Price: <%= @place.price %> €</p>
+    <div class="flex-itemshow">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <%= simple_form_for [@place, Reservation.new] do |f| %>
+          <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
+          <%= f.association :category, required: true, autofocus: true %>
+          <%= f.button :submit, "Book this place", class: "btn btn-success" %>
+        <% end %>
+        <br>
+        <p>Price: <%= @place.price %> €</p>
+      </div>
+    </div>
   </div>
 </div>
-
 <hr>
 <div class="containershow">
   <div id="reviews">
     <% if @place.reviews.blank? %>
-     such a bad place, even  No reviews yet, be the first to leave a review for <%= @place.name %>
+      No reviews yet, be the first to leave a review for <%= @place.name %>
       <%= render 'shared/review-form' %>
     <% else %>
     <h1>Reviews for <%= @place.name %></h1>
