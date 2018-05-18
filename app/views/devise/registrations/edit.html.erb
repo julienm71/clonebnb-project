@@ -8,7 +8,7 @@
       <%= f.input :firstname, disabled: true, autofocus: true, label: "First name" %>
       <%= f.input :lastname, disabled: true, autofocus: true, label: "Last name" %>
       <%= f.input :email, disabled: true, autofocus: true %>
-      <%= f.input :phone_number, required: true, autofocus: true %>
+      <%= f.input :phone_number, required: true, autofocus: true, as: :integer %>
       <hr>
       <%= f.input :photo, autofocus: true %>
       <%= f.input :photo_cache, as: :hidden %>

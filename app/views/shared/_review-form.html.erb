@@ -1,0 +1,4 @@
+<%= simple_form_for [@place, @review], namespace: 'review-form' do |form| %>
+<%= form.input :content, as: :text, label:false, required: true, autofocus: true %>
+<%= form.button :submit, class: 'btn btn-primary' %>
+<% end %>

@@ -26,3 +26,15 @@
   position: sticky !important;
   top: 0;
 }
+
+.thumbnail:hover {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.45);
+}
+
+.thumbnail p {
+  color:black;
+  margin:0;
+  padding:0;
+  color: #616668;
+  margin-bottom:5px;
+}

@@ -8,11 +8,28 @@
   margin-bottom: 20px;
 }
 
-.flex {
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.containershow {
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
 }
+
+
+.flex-itemshow {
+  margin-top: 176px;
+  margin-right: 100px;
+}
+
+.flex-item2 {
+  margin-right: 50px;
+  margin-top: 43px;
+}
+
+  #reviews {
+  }
 
 html {
     scroll-behavior: smooth;

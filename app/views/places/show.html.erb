@@ -1,40 +1,39 @@
 <div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
 
-<div class="container">
-  <div class="flex-item">
+<div class="containershow">
+  <div class="flex-item2">
     <h2> <%= @place.name %> </h2>
     <%= @place.description %>
-    <%= @place.address %>
+    <br>
+    <br>
+    <strong> <%= @place.address %> </strong>
   </div>
 
-  <div class="flex-item">
-    <%= simple_form_for [@place, @reservation] do |f| %>
+  <div class="flex-itemshow">
+    <%= simple_form_for [@place, Reservation.new] do |f| %>
       <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
       <%= f.association :category, required: true, autofocus: true %>
       <%= f.button :submit, "Book this place", class: "btn btn-success" %>
     <% end %>
+    <br>
+    <p>Price: <%= @place.price %> €</p>
   </div>
 </div>
+
 <hr>
-<div class="container">
+<div class="containershow">
   <div id="reviews">
     <% if @place.reviews.blank? %>
-      No reviews yet, be the first to leave a review for <%= @place.name %>
-        <%= simple_form_for([ @place, @review ]) do |form| %>
-        <%= form.input :content, as: :text, label:false, required: true, autofocus: true %>
-        <%= form.button :submit, class: 'btn btn-primary' %>
-        <% end %>
+     such a bad place, even  No reviews yet, be the first to leave a review for <%= @place.name %>
+      <%= render 'shared/review-form' %>
     <% else %>
     <h1>Reviews for <%= @place.name %></h1>
       <% @place.reviews.each do |review| %>
-        <p><%= review.content %></p>
+        <p style="color:#616668">Review: <span style="font-weight:lighter;"><%= review.content %></span></p>
       <% end %>
       <hr>
-              <%= simple_form_for([ @place, @review ]) do |form| %>
-        <%= form.input :content, as: :text, label: false, required: true, autofocus: true %>
-        <%= form.button :submit, class: 'btn btn-primary' %>
-        <% end %>
+    <%= render 'shared/review-form' %>
     <% end %>
   </div>
 </div>
