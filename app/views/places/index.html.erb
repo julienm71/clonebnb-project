@@ -3,17 +3,17 @@
     <div class="container-fluid">
       <div class="row" style="margin-top:10px;">
         <% @places.each do |place| %>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="thumbnail" style="max-height:410px;min-height:410px;">
-              <div class="thumb-head"  style="background-image: url('<%= cl_image_path place.photo, height: 300, width: 400, crop: :fill %>'); height:150px; width:100%;"></div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="thumbnail" style="height:410px;">
+              <div class="thumb-head"  style="background-image: url('<%= cl_image_path place.photo %>'); height:150px; width:100%; background-position: center; background-repeat: no-repeat; background-size:cover;"></div>
               <div class="caption">
                 <h3><%= link_to place.name, place_path(place.id) %></h3>
                 <p>Price/night: <span style="font-weight: bold;"><%= place.price %>€</span></p>
                 <p>Address: <%= place.address %> </p>
               </div>
-              <div style="bottom: 30px; position:absolute;width:89.5%;">
-                <%= link_to "Book now!", place_path(place.id), class: "btn btn-primary", style: "width:100%;" %>
-              </div>
+                <div style="bottom: 30px; position:absolute;width:93%;">
+                  <%= link_to "Book now!", place_path(place.id), class: "btn btn-primary", style: "width:100%;" %>
+                </div>
             </div>
           </div>
         <% end %>
