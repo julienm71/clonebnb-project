@@ -7,10 +7,10 @@
     <%= @place.description %>
     <br>
     <br>
-    <%= @place.address %>
+    <strong> <%= @place.address %> </strong>
   </div>
 
-  <div class="flex-item2">
+  <div class="flex-itemshow">
     <%= simple_form_for [@place, Reservation.new] do |f| %>
       <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
       <%= f.association :category, required: true, autofocus: true %>
