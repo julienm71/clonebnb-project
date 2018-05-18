@@ -30,7 +30,7 @@
     <% else %>
     <h1>Reviews for <%= @place.name %></h1>
       <% @place.reviews.each do |review| %>
-        <p><%= review.content %></p>
+        <p style="color:#616668">Review: <span style="font-weight:lighter;"><%= review.content %></span></p>
       <% end %>
       <hr>
     <%= render 'shared/review-form' %>

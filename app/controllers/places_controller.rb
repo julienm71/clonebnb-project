@@ -66,6 +66,6 @@ private
   end
 
   def place_params
-    params.require(:place).permit(:description, :name, :photo, :address, :user_id, :city)
+    params.require(:place).permit(:description, :name, :photo, :address, :user_id, :city, :price)
   end
 end
