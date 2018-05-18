@@ -3,6 +3,8 @@
     <h1><span id="banner-typed-text"></span></h1>
     <hr style="width:40%;">
     <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <%= simple_form_for :search, :url => places_path, method: :get, html: { class: 'form-inline' },
       wrapper: :horizontal_form do |f| %>
       <div class="form-inputs">
@@ -10,6 +12,8 @@
         <%= f.button :submit, "Search!", class: 'btn btn-primary' %>
       </div>
     <% end %>
+    </div>
+    </div>
     </div>
     <a href="#description"><i class="fa fa-angle-down arrow faa-fast faa-float animated"></i></a>
   </div>
