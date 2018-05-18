@@ -1,5 +1,4 @@
 class ReservationPolicy < ApplicationPolicy
-
   def create?
     true
   end
