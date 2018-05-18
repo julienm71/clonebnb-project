@@ -3,13 +3,12 @@
     <div class="container-fluid">
       <div class="row" style="margin-top:10px;">
         <% @places.each do |place| %>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <div class="thumbnail" style="max-height:500px;min-height:500px;">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="thumbnail" style="max-height:500px;min-height:150px;">
               <div class="thumb-head"  style="background-image: url('<%= cl_image_path place.photo, height: 300, width: 400, crop: :fill %>'); height:150px; width:100%;"></div>
               <div class="caption">
                 <h3><%= link_to place.name, place_path(place.id) %></h3>
-                <p><%= place.description %></p>
-                <p><%= place.price %>€ (per night)</p>
+                <p><%= place.price %> € (per night)</p>
               </div>
               <div style="bottom: 30px; position:absolute;width:89.5%;">
                 <%= link_to "Book now!", place_path(place.id), class: "btn btn-primary", style: "width:100%;" %>
