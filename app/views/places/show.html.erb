@@ -10,8 +10,8 @@
 
   <div class="flex-item">
     <%= simple_form_for [@place, @reservation] do |f| %>
-      <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true %>
-      <%= f.association :category %>
+      <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
+      <%= f.association :category, required: true, autofocus: true %>
       <%= f.button :submit, "Book this place", class: "btn btn-success" %>
     <% end %>
   </div>
@@ -22,7 +22,7 @@
     <% if @place.reviews.blank? %>
       No reviews yet, be the first to leave a review for <%= @place.name %>
         <%= simple_form_for([ @place, @review ]) do |form| %>
-        <%= form.input :content, as: :text %>
+        <%= form.input :content, as: :text, label:false, required: true, autofocus: true %>
         <%= form.button :submit, class: 'btn btn-primary' %>
         <% end %>
     <% else %>
@@ -32,7 +32,7 @@
       <% end %>
       <hr>
               <%= simple_form_for([ @place, @review ]) do |form| %>
-        <%= form.input :content, as: :text %>
+        <%= form.input :content, as: :text, label: false, required: true, autofocus: true %>
         <%= form.button :submit, class: 'btn btn-primary' %>
         <% end %>
     <% end %>
