@@ -1,10 +1,12 @@
 <div class="bannershow" style="background-image: url('<%= cl_image_path @place.photo_url, crop: :fill %>');"></div>
 
 
-<div class="container">
-  <div class="flex-item">
+<div class="containershow">
+  <div class="flex-item2">
     <h2> <%= @place.name %> </h2>
     <%= @place.description %>
+    <br>
+    <br>
     <%= @place.address %>
   </div>
 
@@ -16,8 +18,9 @@
     <% end %>
   </div>
 </div>
-<div class="container">
-  <hr>
+
+<hr>
+<div class="containershow">
   <div id="reviews">
     <% if @place.reviews.blank? %>
       No reviews yet, be the first to leave a review for <%= @place.name %>
