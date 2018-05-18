@@ -10,12 +10,14 @@
     <%= @place.address %>
   </div>
 
-  <div class="flex-item">
+  <div class="flex-item2">
     <%= simple_form_for [@place, Reservation.new] do |f| %>
       <%= f.input :reserved_at, as: :date, input_html: { class: "datepicker" }, html5: true, required: true, autofocus: true %>
       <%= f.association :category, required: true, autofocus: true %>
       <%= f.button :submit, "Book this place", class: "btn btn-success" %>
     <% end %>
+    <br>
+    <p>Price: <%= @place.price %> €</p>
   </div>
 </div>
 
@@ -23,7 +25,7 @@
 <div class="containershow">
   <div id="reviews">
     <% if @place.reviews.blank? %>
-      No reviews yet, be the first to leave a review for <%= @place.name %>
+     such a bad place, even  No reviews yet, be the first to leave a review for <%= @place.name %>
       <%= render 'shared/review-form' %>
     <% else %>
     <h1>Reviews for <%= @place.name %></h1>

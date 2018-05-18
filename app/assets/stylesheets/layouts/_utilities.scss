@@ -6,19 +6,16 @@
 
 .container {
   margin-bottom: 20px;
+  display: flex;
 }
 
 .containershow {
+  margin-left: 50px;
   display: flex;
   justify-content: space-between;
   align-item: center;
 }
 
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .flex-itemshow {
   margin-top: 43px;
@@ -26,11 +23,11 @@
 }
 
 .flex-item2 {
-  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 43px;
 }
 
   #reviews {
-    margin-left: 50px;
   }
 
 html {
