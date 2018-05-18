@@ -14,8 +14,71 @@
     <a href="#description"><i class="fa fa-angle-down arrow faa-fast faa-float animated"></i></a>
   </div>
 </div>
-<div class="container" id="description">
-  <h1 class="text-center">How it works</h1>
 
+<div class="container-fluid" id="description">
+  <h1 class="text-center">HOW IT WORKS</h1>
+  <hr>
+  <ul id="progressbar">
+    <li class="active">SEARCH</li>
+    <li class="active">SELECT</li>
+    <li class="active">BOOK</li>
+  </ul>
+</div>
 
+<div class="container-fluid flex">
+  <div class="row">
+    <div class="card-container">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-home">
+        <div class="front">
+          <h2 class="sub-title"><i class="fa fa-search"></i> Search</h2>
+          <h1 class="title">
+            Search for the city you want to rent a place in
+          </h1>
+          <%= image_tag "search.jpg", class: "image" %>
+        </div>
+        <div class="back">
+          <h3 class="synopsis">Description</h3>
+          <p>Rick and Morty is an American adult animated television series created by Justin Roiland and Dan Harmon for Adult Swim. The series follows the misadventures of alcoholic scientist Rick and his easily influenced grandson Morty, who split their time
+            between domestic family life and interdimensional travel.</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-home">
+        <div class="front">
+          <h2 class="sub-title"><i class="fa fa-check-circle"></i> Select</h2>
+          <h1 class="title">
+            Select the best place for your event
+          </h1>
+          <%= image_tag "select.jpg", class: "image" %>
+        </div>
+        <div class="back">
+          <h3 class="synopsis">Description</h3>
+          <p>Rick and Morty is an American adult animated television series created by Justin Roiland and Dan Harmon for Adult Swim. The series follows the misadventures of alcoholic scientist Rick and his easily influenced grandson Morty, who split their time
+            between domestic family life and interdimensional travel.</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card-home">
+        <div class="front">
+          <h2 class="sub-title"><i class="fa fa-calendar"></i> Book</h2>
+          <h1 class="title">
+            Takes only a few seconds to book !
+          </h1>
+          <%= image_tag "book.jpg", class: "image" %>
+        </div>
+        <div class="back">
+          <h3 class="synopsis">Description</h3>
+          <p>Rick and Morty is an American adult animated television series created by Justin Roiland and Dan Harmon for Adult Swim. The series follows the misadventures of alcoholic scientist Rick and his easily influenced grandson Morty, who split their time
+            between domestic family life and interdimensional travel.</p>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
 </div>
