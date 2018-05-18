@@ -12,3 +12,25 @@
     <%= f.button :submit, "Book this place", class: "btn btn-success" %>
   <% end %>
 </div>
+<hr>
+<div class="container">
+  <div id="reviews">
+    <% if @place.reviews.blank? %>
+      No reviews yet, be the first to leave a review for <%= @place.name %>
+        <%= simple_form_for([ @place, @review ]) do |form| %>
+        <%= form.input :content, as: :text %>
+        <%= form.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+    <% else %>
+    <h1>Reviews for <%= @place.name %></h1>
+      <% @place.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+      <hr>
+              <%= simple_form_for([ @place, @review ]) do |form| %>
+        <%= form.input :content, as: :text %>
+        <%= form.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
